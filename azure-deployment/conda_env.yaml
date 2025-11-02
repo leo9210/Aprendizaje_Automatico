@@ -1,0 +1,10 @@
+name: pycaret-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11.13
+  - pip
+  - pip:
+    - azureml-defaults
+    - pycaret==3.3.2
