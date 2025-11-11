@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 import streamlit as st
 import pandas as pd
@@ -9,8 +10,11 @@ import json
 AZURE_ENDPOINT = "http://14caf6ec-bc2e-4dba-aa5c-06e2c1657dc3.westus2.azurecontainer.io/score"
 AZURE_KEY = os.getenv("AZURE_KEY", "")
 
+parent_path = Path(__file__).parent
+img_path = f"{parent_path}/assets/sp_logo.png"
+
 st.set_page_config(page_title="SmartPrice", page_icon="📊", layout="wide")
-st.image("./assets/sp_logo.png", width=180)
+st.image(img_path, width=180)
 st.title("SmartPrice - Predicción de precios de casas utilizando Machine Learning 🤖🏡")
 
 st.markdown("Subí un archivo CSV con los datos de la o las casas elegidas y conoce su precio de venta en segundos")
